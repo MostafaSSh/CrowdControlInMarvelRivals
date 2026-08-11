@@ -10,7 +10,7 @@ I went through every character and tested their abilities on another character /
 
 ## Motivation
 
-Unfortunately with the addition of every new character every half-season, NetEase loves giving them some sort of crowd control for some reason. Thus, the game will at some point be overwhelming with random CC and moving your left stick or pressing WASD will not determine how much distance you can cover. Tenacity also never procs for some reason on tanks, even though they get CC dumped half the time. Frankly, I started this project to justify my anguish of playing tank lol. Here is [Exhibit A](https://www.youtube.com/watch?v=G1_xhNsUyfM)
+Unfortunately with the addition of every new character every half-season, NetEase loves giving them some sort of crowd control for some reason. Thus, the game will at some point be overwhelming with random CC and moving your left stick or pressing WASD will not determine how much distance you can cover. Tenacity also never procs for some reason on tanks, even though they get CC dumped half the time. Frankly, I started this project to justify my anguish of playing tank lol. Here is [Exhibit A](https://www.youtube.com/watch?v=G1_xhNsUyfM). Keep in mind that this was pre-tenacity update.
 
 ## Data
 
