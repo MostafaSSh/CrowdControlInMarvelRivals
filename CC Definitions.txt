@@ -1,0 +1,10 @@
+CC Definitions
+Launched	Describes when an opposing player is vertically displaced
+Pushed	Describes when an opposing player is horizontally displaced away from acting player
+Cutscene 	Describes when an opposing player is displaced whilst losing full control
+Stunned	Describes when an opposing player cannot move, but retains the same position prior to action 
+Slowed	Describes when an oppposing player is capable of movement, but at a slower pace than normal
+Grounded	Describes when an opposing player strictly cannot use movement abilities
+Pulled	Describes when an opposing player is displaced towards the acting player
+Stuck	Describes when an opposing player cannot move, but can still interact with the acting player
+Exile	(Hulk specific) Describes when an opposing character is effectively removed from the game until hulk interacts with exiled opponent or until time runs out on exile
