@@ -36,7 +36,7 @@ def find_boolean_columns(df) -> list:
     return boolean_columns
     
       
-def num_of_cc_abilties(df, boolean_columns):
+def num_of_cc_abilities(df, boolean_columns):
     """
     Finds how many abilities have Crowd Control for each character and adds it to the raw data
     
@@ -45,11 +45,46 @@ def num_of_cc_abilties(df, boolean_columns):
     
     """
     
-    df["Number of CC Abilties"]= df[boolean_columns].apply(lambda row: (row == "Y").sum(), axis = 1)
+    df["Number of CC Abilities"]= df[boolean_columns].apply(lambda row: (row == "Y").sum(), axis = 1) 
     
     
 def update_excel_file(df):
+    """
+    Exports the clean data into a new excel file
+    
+    Parameter:
+    DataFrame: clean data
+    
+    """
     df.to_excel("MRCC_Updated.xlsx")
+
+def statistics(df):
+    """
+    Basic analysis of the data
+    
+    Parameter:
+    DataFrame: raw data
+    
+    """
+    num_of_chars_per_role = df.groupby("Role").size()
+    mean = df.groupby("Role")["Number of CC Abilities"].mean()
+    std = df.groupby("Role")["Number of CC Abilities"].std()
+    sum_of_all_CC_abilities = df["Number of CC Abilities"].sum()
+    highest_per_class = df.groupby("Role")["Number of CC Abilities"].max()
+    #char_with_highest_number_of_cc = df["Number of CC Abilities"].idxmax()
+    highest_num_of_cc = df["Number of CC Abilities"].max()
+    #char_highest_per_role = df.loc[df.groupby("Role")["Number of CC Abilities"].idxmax(), "Character"]
+    
+    print(f"How Many Characters for Each {num_of_chars_per_role} \n" )
+    print(f"The Mean of CC Abilities Across Each {mean} \n")
+    print(f"The Standard Deviation of CC Abilities Across Each {std} \n")
+    print("How many abilities in the game have CC total? ", sum_of_all_CC_abilities)
+    print(f"\nMost Amount of CC Abilities From a Singular Character Across Each {highest_per_class} \n")
+    #print(f"Character with the most amount of CC: {df.iloc[char_with_highest_number_of_cc]["Character"]} with {highest_num_of_cc} CC abilities\n")
+    #print(f"The Biggest Perpetrator in Each Role are...\n{char_highest_per_role} \n")
+    
+    ## note, need to fix since there are multiple characters with the highest amount of cc in their class (Vanguard and Duelist)
+    
 
 def main(): 
     """
@@ -64,10 +99,12 @@ def main():
     boolean_columns = find_boolean_columns(df)
     
     #add a column to the raw data that counts how many CCs each character has
-    num_of_cc_abilties(df, boolean_columns)
+    num_of_cc_abilities(df, boolean_columns)
+    
+    statistics(df)
     
     #export the data out to a new excel file
-    update_excel_file(df)
+    #update_excel_file(df)
     
     
 main()
