@@ -1,4 +1,5 @@
 import pandas as pd
+from collections import Counter
 
 def import_file() -> pd.DataFrame:
     """
@@ -111,6 +112,35 @@ def statistics(df):
     
     print(f"\nCharacter with the most amount of CC OVERALL is {df.iloc[char_with_highest_number_of_cc]["Character"]} with {highest_num_of_cc} CC abilities\n")
 
+def frequency_of_each_CC(df):
+    cc_columns = []
+    frequency = Counter()
+    
+    for column in df.columns:
+        if "If Y, Which CC" in column:
+            cc_columns.append(column)
+            
+    #note: fillna does not work in place, you have to assign it to something. 
+    df_cc = df[cc_columns].fillna("Nothing")
+    
+    #print(df_cc)
+    
+    df_cc_lists = df_cc.values.tolist()
+    
+    
+    for list in df_cc_lists:
+        fixed_list = [item for sublist in [s.split() for s in list] for item in sublist]
+        frequency += Counter(fixed_list)
+      
+    frequency_dict = dict(frequency.most_common())
+    frequency_dict.pop("Nothing")
+    
+    print("How Frequent Does Each CC Appear?\n")
+    
+    for cc,freq in frequency_dict.items():
+        print(f'{cc}: {freq}')
+    
+
 def main(): 
     """
     Main Function
@@ -128,8 +158,9 @@ def main():
     
     statistics(df)
     
+    frequency_of_each_CC(df)
     #export the data out to a new excel file
-    #update_excel_file(df)
+    update_excel_file(df)
     
     
 main()
