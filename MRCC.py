@@ -35,7 +35,6 @@ def find_boolean_columns(df) -> list:
             boolean_columns.append(column)
     return boolean_columns
     
-      
 def num_of_cc_abilities(df, boolean_columns):
     """
     Finds how many abilities have Crowd Control for each character and adds it to the raw data
@@ -46,8 +45,32 @@ def num_of_cc_abilities(df, boolean_columns):
     """
     
     df["Number of CC Abilities"]= df[boolean_columns].apply(lambda row: (row == "Y").sum(), axis = 1) 
+
+def char_highest_per_role(df, highest_per_role):
+    """
+    Subhelper method that uses the highest frequency per role to find the culprits in each role
+        
+    Parameter:
+    DataFrame: cleaned data
+    Series: highest frequency of CC abiltiies in each role
     
+    Return: 
+    Dictionary: K --> Role, V --> List of Characters with Highest Number of CC abilties in that Role
     
+    """
+    
+    HPR_dict = highest_per_role.to_dict()
+    #print(HPR_dict)
+    res = {}
+    
+    for role, freq in HPR_dict.items():
+        if role not in res:
+            res[role] = []
+            
+        res[role].append(df[(df["Role"] == role) & (df["Number of CC Abilities"] == freq)]["Character"].tolist())
+        
+    return res
+        
 def update_excel_file(df):
     """
     Exports the clean data into a new excel file
@@ -71,20 +94,22 @@ def statistics(df):
     std = df.groupby("Role")["Number of CC Abilities"].std()
     sum_of_all_CC_abilities = df["Number of CC Abilities"].sum()
     highest_per_class = df.groupby("Role")["Number of CC Abilities"].max()
-    #char_with_highest_number_of_cc = df["Number of CC Abilities"].idxmax()
+    char_with_highest_number_of_cc = df["Number of CC Abilities"].idxmax()
     highest_num_of_cc = df["Number of CC Abilities"].max()
-    #char_highest_per_role = df.loc[df.groupby("Role")["Number of CC Abilities"].idxmax(), "Character"]
+     
+    biggest_culprits_per_role = char_highest_per_role(df, highest_per_class)
     
     print(f"How Many Characters for Each {num_of_chars_per_role} \n" )
     print(f"The Mean of CC Abilities Across Each {mean} \n")
     print(f"The Standard Deviation of CC Abilities Across Each {std} \n")
     print("How many abilities in the game have CC total? ", sum_of_all_CC_abilities)
-    print(f"\nMost Amount of CC Abilities From a Singular Character Across Each {highest_per_class} \n")
-    #print(f"Character with the most amount of CC: {df.iloc[char_with_highest_number_of_cc]["Character"]} with {highest_num_of_cc} CC abilities\n")
-    #print(f"The Biggest Perpetrator in Each Role are...\n{char_highest_per_role} \n")
+    print(f"\nHighest Frequency of CC Abilities From a Singular Character Across Each {highest_per_class} \n")
     
     ## note, need to fix since there are multiple characters with the highest amount of cc in their class (Vanguard and Duelist)
+    for role, val in biggest_culprits_per_role.items():
+        print(f"The Biggest Culprits in {role} is/are {val[0]}")
     
+    print(f"\nCharacter with the most amount of CC OVERALL is {df.iloc[char_with_highest_number_of_cc]["Character"]} with {highest_num_of_cc} CC abilities\n")
 
 def main(): 
     """
