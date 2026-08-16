@@ -113,6 +113,13 @@ def statistics(df):
     print(f"\nCharacter with the most amount of CC OVERALL is {df.iloc[char_with_highest_number_of_cc]["Character"]} with {highest_num_of_cc} CC abilities\n")
 
 def frequency_of_each_CC(df):
+    """
+    Finds the frequency of all the CC's
+    
+    Parameter:
+    DataFrame: raw data
+    
+    """
     cc_columns = []
     frequency = Counter()
     
@@ -156,9 +163,12 @@ def main():
     #add a column to the raw data that counts how many CCs each character has
     num_of_cc_abilities(df, boolean_columns)
     
+    #prints out all of the basic statistics
     statistics(df)
     
+    #prints out the number of times each CC ability occurs across the whole roster
     frequency_of_each_CC(df)
+    
     #export the data out to a new excel file
     update_excel_file(df)
     
