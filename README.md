@@ -69,7 +69,7 @@ Whoop de do, there is a lot of CC in the game. As I work on this project more, I
    
 ## Future Work
 
-For future updates, I will add actual statistics and analyses... and build a dashboard. 
+With the statistics (mostly) complete, I will write a report to discuss my findings.
 
 ## Author
 
