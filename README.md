@@ -52,7 +52,7 @@ With 53 total characters (14 vanguards, 26 duelists, 12 strategists, and DP) wit
 | Role | Mean |
 |---|---|
 | All Three | 0.000000 |
-| Duelist | 1.384615 |
+| Duelist | 1.461538 |
 | Strategist | 1.250000 |
 | Vanguard | 2.428571 |
 
@@ -61,7 +61,7 @@ With 53 total characters (14 vanguards, 26 duelists, 12 strategists, and DP) wit
 | Role | Standard Deviation |
 |---|---|
 | All Three | NaN |
-| Duelist | 1.061204 |
+| Duelist | 0.989172 |
 | Strategist | 1.544786 |
 | Vanguard | 1.222500 |
 
@@ -103,7 +103,7 @@ With 53 total characters (14 vanguards, 26 duelists, 12 strategists, and DP) wit
 | Grounded | 5 |
 | Exile | 1 |
 
-**Total CC Abilities in Game:** 85
+**Total CC Abilities in Game:** 87
 
 ## Tech Stack
 
