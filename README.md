@@ -40,7 +40,7 @@ With 53 total characters (14 vanguards, 26 duelists, 12 strategists, and DP) wit
 
 ### Character Count by Role
 
-| Role | Value |
+| Role | Count |
 |---|---|
 | All Three | 1 |
 | Duelist | 26 |
@@ -49,7 +49,7 @@ With 53 total characters (14 vanguards, 26 duelists, 12 strategists, and DP) wit
 
 ### Mean CC Abilities by Role
 
-| Role | Value |
+| Role | Mean |
 |---|---|
 | All Three | 0.000000 |
 | Duelist | 1.384615 |
@@ -58,7 +58,7 @@ With 53 total characters (14 vanguards, 26 duelists, 12 strategists, and DP) wit
 
 ### Standard Deviation of CC Abilities by Role
 
-| Role | Value |
+| Role | Standard Deviation |
 |---|---|
 | All Three | NaN |
 | Duelist | 1.061204 |
@@ -76,7 +76,7 @@ With 53 total characters (14 vanguards, 26 duelists, 12 strategists, and DP) wit
 
 ### Biggest Culprits by Role
 
-| Role | Value |
+| Role | Character(s) |
 |---|---|
 | All Three | Deadpool |
 | Duelist | Elsa Bloodstone, Mister Fantastic, Spider-Man, Winter Soldier |
@@ -91,7 +91,7 @@ With 53 total characters (14 vanguards, 26 duelists, 12 strategists, and DP) wit
 
 ### CC Effect Frequency
 
-| Role | Value |
+| Effect | Frequency |
 |---|---|
 | Slowed | 22 |
 | Pushed | 21 |
