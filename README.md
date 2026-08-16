@@ -34,9 +34,76 @@ There are a lot of CC "types" in Marvel Rivals and it would be very time-consumi
 
 Something to note here is that even though exile could technically fall under "cutscene," I made it its own category because exile temporarily removes the interaction of the affected player from both non-Hulk players AND objective. 
 
-## Findings / Results
+## Results
 
-Whoop de do, there is a lot of CC in the game. As I work on this project more, I will update this section with actual statistics lol. 
+With 53 total characters (14 vanguards, 26 duelists, 12 strategists, and DP) with the release of The Hood, there is a lot to learn about the CC condition in Marvel Rivals.
+
+### Character Count by Role
+
+| Role | Count |
+|---|---|
+| All Three | 1 |
+| Duelist | 26 |
+| Strategist | 12 |
+| Vanguard | 14 |
+
+### Mean CC Abilities by Role
+
+| Role | Mean |
+|---|---|
+| All Three | 0.000000 |
+| Duelist | 1.384615 |
+| Strategist | 1.250000 |
+| Vanguard | 2.428571 |
+
+### Standard Deviation of CC Abilities by Role
+
+| Role | Standard Deviation |
+|---|---|
+| All Three | NaN |
+| Duelist | 1.061204 |
+| Strategist | 1.544786 |
+| Vanguard | 1.222500 |
+
+### Highest CC Count from a Single Character by Role
+
+| Role | Value |
+|---|---|
+| All Three | 0 |
+| Duelist | 3 |
+| Strategist | 5 |
+| Vanguard | 4 |
+
+### Biggest Culprits by Role
+
+| Role | Character(s) |
+|---|---|
+| All Three | Deadpool |
+| Duelist | Elsa Bloodstone, Mister Fantastic, Spider-Man, Winter Soldier |
+| Strategist | Invisible Woman |
+| Vanguard | Bruce Banner, Rogue |
+
+### Overall Top CC Character
+
+| Character | Number of CC Abilties |
+|---|---|
+| Invisible Woman | 5 |
+
+### CC Effect Frequency
+
+| Effect | Frequency |
+|---|---|
+| Slowed | 22 |
+| Pushed | 21 |
+| Cutscene | 17 |
+| Launched | 16 |
+| Stunned | 10 |
+| Stuck | 10 |
+| Pulled | 8 |
+| Grounded | 5 |
+| Exile | 1 |
+
+**Total CC Abilities in Game:** 85
 
 ## Tech Stack
 
