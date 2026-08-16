@@ -85,10 +85,9 @@ With 53 total characters (14 vanguards, 26 duelists, 12 strategists, and DP) wit
 
 ### Overall Top CC Character
 
-| Role | Value |
+| Character | Number of CC Abilties |
 |---|---|
-| Character | Invisible Woman |
-| CC Abilities | 5 |
+| Invisible Woman | 5 |
 
 ### CC Effect Frequency
 
